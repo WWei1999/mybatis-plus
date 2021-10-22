@@ -35,7 +35,7 @@ public class ServiceTests {
         List<User> list = new ArrayList<User>();
 
         for (int i = 0; i < 10; i++) {
-            list.add(new User(100L+i,"User"+i,22+i,"user"+i+"@qq.com"));
+            list.add(new User(100L+i,"User"+i,22+i,"user"+i+"@qq.com",0));
         }
         boolean b = userService.saveBatch(list);
         System.out.println("是否批量添加成功："+b);

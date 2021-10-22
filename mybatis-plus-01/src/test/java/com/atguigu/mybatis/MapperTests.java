@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
-import java.sql.SQLException;
-import java.sql.Wrapper;
 import java.util.*;
 
 /**
@@ -25,22 +23,17 @@ public class MapperTests {
 
     @Test
     void testInsert() {
-        User user = new User(8L, "tom", 22, "qian@runyu.com");
+        User user = new User(551999l, "cat_none_id", 23, "qian@runyu.com", 0);
         int i = userMapper.insert(user);
         System.out.println("成功插入：" + i + "条数据。");
     }
 
     @Test
-    void testDeleteById() {
-        int i = userMapper.deleteById(8L);
-        System.out.println("成功删除：" + i + "条数据。");
-    }
-
-    @Test
-    void testUpdate() {
-        User user = new User(8L, "周润发", 22, "zhou@runfa.com");
-        int i = userMapper.updateById(user);
-        System.out.println("成功修改：" + i + "条数据。");
+    void testSelectAllByName() {
+        List<User> list = userMapper.selectAllByName("cat_none_id");
+        for (User user : list) {
+            System.out.println(user);
+        }
     }
 
     @Test
@@ -58,11 +51,19 @@ public class MapperTests {
     }
 
     @Test
+    void testQueryAll() {
+        List<User> users = userMapper.selectAll();
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
     void testQueryMap() {
-        Map<String,Object> condition = new HashMap<String,Object>();
+        Map<String, Object> condition = new HashMap<String, Object>();
         //查询name为Tom并且age为28的用户
-        condition.put("name","Tom");
-        condition.put("age",28);
+        condition.put("name", "Tom");
+        condition.put("age", 28);
         List<User> users = userMapper.selectByMap(condition);
         for (User user : users) {
             System.out.println(user);
@@ -70,18 +71,23 @@ public class MapperTests {
     }
 
     @Test
-    void testSelectAllByName(){
-        List<User> list = userMapper.selectAllByName("Tom");
+    void testSelectAllByAge() {
+        List<User> list = userMapper.selectAllByAge(27);
         for (User user : list) {
             System.out.println(user);
         }
     }
 
     @Test
-    void testSelectAllByAge(){
-        List<User> list = userMapper.selectAllByAge(27);
-        for (User user : list) {
-            System.out.println(user);
-        }
+    void testDeleteById() {
+        int i = userMapper.deleteById(9l);
+        System.out.println("成功删除：" + i + "条数据。");
+    }
+
+    @Test
+    void testUpdate() {
+        User user = new User(8L, "周润发", 22, "zhou@runfa.com", 0);
+        int i = userMapper.updateById(user);
+        System.out.println("成功修改：" + i + "条数据。");
     }
 }
