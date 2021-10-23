@@ -88,8 +88,8 @@ public class WrapperTest {
     void testUpdateWrapper(){
         UpdateWrapper<User> update = new UpdateWrapper<>();
         update
-                .set("age",18)
-                .set("email","aaa123123@qq.com")
+                .set("age",22)
+                .set("email","atguigu@qq.com")
                 .like("name","Tom");
 
         userMapper.update(new User(),update);
