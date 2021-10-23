@@ -90,7 +90,7 @@ public class WrapperTest {
         update
                 .set("age",22)
                 .set("email","atguigu@qq.com")
-                .like("name","Tom");
+                .like("name","大聪明");
 
         userMapper.update(new User(),update);
         List<User> list = userMapper.selectList(update);
