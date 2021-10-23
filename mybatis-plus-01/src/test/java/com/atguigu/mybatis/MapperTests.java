@@ -25,7 +25,7 @@ public class MapperTests {
     void testInsert() {
         User user = new User(551999l, "cat_none_id", 23, "qian@runyu.com", 0);
         int i = userMapper.insert(user);
-        System.out.println("成功插入：" + i + "条数据。");
+        System.out.println("成功插入" + i + "条数据。");
     }
 
     @Test
