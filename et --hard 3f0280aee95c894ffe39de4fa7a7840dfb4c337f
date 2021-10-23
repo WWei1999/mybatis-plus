@@ -1,0 +1,57 @@
+[33mcommit 3f0280aee95c894ffe39de4fa7a7840dfb4c337f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: wuwei <2426178830@qq.com>
+Date:   Sat Oct 23 09:26:50 2021 +0800
+
+    练习Demo：Mybatis-Plus
+    v01
+    正常实现功能：CRUD、注解、分页插件
+    正在实现的功能：乐观锁案例测试，商品价格不一致；
+    将要实现的功能：乐观锁失败案例的解决方案。
+    
+    v02
+    采用乐观锁插件解决了乐观锁导致的数据部之一问题。
+    将要实现的功能：使用Wrapper条件构造器进行查询。
+
+[33mcommit 4cd7a5bd1a145993195eeb4381fa6f46e82c3b12[m
+Author: wuwei <2426178830@qq.com>
+Date:   Sat Oct 23 09:18:30 2021 +0800
+
+    练习Demo：Mybatis-Plus
+    v01
+    正常实现功能：CRUD、注解、分页插件
+    正在实现的功能：乐观锁案例测试，商品价格不一致；
+    将要实现的功能：乐观锁失败案例的解决方案。
+    
+    v02
+    采用乐观锁插件解决了乐观锁导致的数据部之一问题。
+    将要实现的功能：使用Wrapper条件构造器进行查询。
+
+[33mcommit 1700b48e4bc0bb080c43c266e9a31146c455ee1f[m
+Author: wuwei <2426178830@qq.com>
+Date:   Fri Oct 22 21:32:51 2021 +0800
+
+    练习Demo：Mybatis-Plus
+    正常实现功能：CRUD、注解、分页插件
+    正在实现的功能：乐观锁案例测试，商品价格不一致；
+    将要实现的功能：乐观锁失败案例的解决方案。
+
+[33mcommit 9edb1809e1bcda928de6521b4214bd69dd64740a[m
+Author: wuwei <2426178830@qq.com>
+Date:   Fri Oct 22 21:32:35 2021 +0800
+
+    练习Demo：Mybatis-Plus
+    正常实现功能：CRUD、注解、分页插件
+    正在实现的功能：乐观锁案例测试，商品价格不一致；
+    将要实现的功能：乐观锁失败案例的解决方案。
+
+[33mcommit 40844df7bd3201cff210597e00b5b283d2c8a1ae[m
+Author: WWei1999 <90817748+WWei1999@users.noreply.github.com>
+Date:   Fri Oct 22 14:40:13 2021 +0800
+
+    Update User.java
+
+[33mcommit 56d172436b985f3ff60f6d5967310dd866b0e303[m
+Author: wuwei <2426178830@qq.com>
+Date:   Fri Oct 22 14:39:02 2021 +0800
+
+    首次提交
