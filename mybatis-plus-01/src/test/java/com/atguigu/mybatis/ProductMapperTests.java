@@ -43,14 +43,55 @@ public class ProductMapperTests {
         Product product_wang = productMapper.selectById(1l);
         Product product_li = productMapper.selectById(1l);
         //1.小王增加50元
-        product_wang.setPrice(product_wang.getPrice()+50);
-        productMapper.updateById(product_wang);
+        product_wang.setPrice(product_wang.getPrice() + 50);
+        int wang = productMapper.updateById(product_wang);
+        if (wang == 1) {
+            System.out.println("小王修改成功！");
+        } else {
+            System.out.println("小王修改失败！");
+        }
         //2.小李减少30元
-        product_li.setPrice(product_li.getPrice()-30);
-        productMapper.updateById(product_li);
+        product_li.setPrice(product_li.getPrice() - 30);
+        int li = productMapper.updateById(product_li);
+        if (li == 1) {
+            System.out.println("小李修改成功！");
+        } else {
+            System.out.println("小李修改失败！");
+        }
         //3.最终结果：成本是80元,我们期望是100+50-30=120元,每本利润40元
         Product product_1 = productMapper.selectById(1l);
-        System.out.println("最终结果："+product_1.getPrice());
+        System.out.println("最终结果：" + product_1.getPrice());
+    }
+
+    @Test
+    void testOptimisticLock02() {
+        //0.获取产品对象:Product(id=1, name=笔记本, price=100, version=0, deleted=0)
+        Product product_wang = productMapper.selectById(1l);
+        Product product_li = productMapper.selectById(1l);
+        //1.小王增加50元
+        product_wang.setPrice(product_wang.getPrice() + 50);
+        int wang = productMapper.updateById(product_wang);
+        if (wang == 1) {
+            System.out.println("小王修改成功！");
+        } else {
+            System.out.println("小王修改失败！");
+        }
+        //2.小李减少30元
+        product_li.setPrice(product_li.getPrice() - 30);
+        int li = productMapper.updateById(product_li);
+        if (li == 0) {
+            Integer price = productMapper.selectById(1l).getPrice();
+            product_li.setPrice(price-30);
+            int i = productMapper.updateById(product_li);
+            if (i!=0){
+                System.out.println("小李修改成功！");
+            }else{
+                System.out.println("小李修改失败！");
+            }
+        }
+        //3.最终结果：成本是80元,我们期望是100+50-30=120元,每本利润40元
+        Product product_1 = productMapper.selectById(1l);
+        System.out.println("最终结果：" + product_1.getPrice());
     }
 
 }
